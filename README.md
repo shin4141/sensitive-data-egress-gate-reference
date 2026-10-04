@@ -1,30 +1,26 @@
 # Sensitive Data Egress Gate — 最小の参照実装
 
-**Current: 1 credential → ALL**
+**Current: one credential → potentially ALL**
 
-**Target: 1 credential → bounded**
+**Target: one credential → bounded**
+
+**This repository is a reference implementation, not a production security product.**
 
 認証情報が1つ悪用されても、取得できる量を条件で区切る。その設計思想を、架空データで数秒以内に確認できるCLIです。
 通常は **500件/回・直近24時間で2,000件**。大量取得には別の承認者を要求し、全量・高影響の取得は、通知・待機・独立承認・最終責任者の承認がそろった専用経路（Escalation Multisig Gate）へ進みます。
 
-このリポジトリは、Shinの公開確認前のローカル版です。[English](README.en.md)
+これは参照実装であり、本番のセキュリティ製品ではありません。[English](README.en.md)
 
 ## すぐ動かす
 
 Python **3.12以降**とGitを使います。追加ライブラリ・pip install・認証情報は不要です。実行時のネットワークアクセスもありません。
-公開後のリポジトリ、または提供されたGit bundleをcloneし、そのフォルダで実行します。
+公開リポジトリをcloneし、そのフォルダで実行します。
 
 ```sh
-python3 -m sdeg
-python3 -m unittest discover -s tests -v
-```
-
-bundleで受け取った場合のclone例：
-
-```sh
-git clone /path/to/sensitive-data-egress-gate-reference.bundle sensitive-data-egress-gate-reference
+git clone https://github.com/shin4141/sensitive-data-egress-gate-reference.git
 cd sensitive-data-egress-gate-reference
 python3 -m sdeg
+python3 -m unittest discover -s tests -v
 ```
 
 短い実行例です。完全な出力は [examples/cli-output.txt](examples/cli-output.txt) に保存しています。

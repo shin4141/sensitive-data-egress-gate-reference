@@ -1,29 +1,25 @@
 # Sensitive Data Egress Gate — Minimal Reference Implementation
 
-**Current: 1 credential → ALL**
+**Current: one credential → potentially ALL**
 
-**Target: 1 credential → bounded**
+**Target: one credential → bounded**
+
+**This repository is a reference implementation, not a production security product.**
 
 Run a small CLI to see the design work with fictional records. Normal access is limited to **500 records/request** and **2,000 over a rolling 24-hour window**. Larger access requires independent approval. Full or high-impact access requires a separate escalation chain: Escalation Multisig Gate.
 
-This is a local draft awaiting Shin's publication review. [日本語](README.md)
+[日本語](README.md)
 
 ## Run it
 
 Use Python **3.12 or later** and Git. No third-party packages, credentials, pip install, or runtime network access are needed.
-Clone the published repository or the supplied Git bundle, then run these commands from its root:
+Clone the public repository, then run these commands from its root:
 
 ```sh
-python3 -m sdeg
-python3 -m unittest discover -s tests -v
-```
-
-If you received a bundle:
-
-```sh
-git clone /path/to/sensitive-data-egress-gate-reference.bundle sensitive-data-egress-gate-reference
+git clone https://github.com/shin4141/sensitive-data-egress-gate-reference.git
 cd sensitive-data-egress-gate-reference
 python3 -m sdeg
+python3 -m unittest discover -s tests -v
 ```
 
 The short CLI shows per-request and rolling limits, independent approval, destination invalidation, blocked Owner-only access, and the successful chain:
