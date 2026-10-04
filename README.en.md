@@ -1,6 +1,7 @@
 # Sensitive Data Egress Gate — Minimal Reference Implementation
 
-**Current: 1 credential → ALL**  
+**Current: 1 credential → ALL**
+
 **Target: 1 credential → bounded**
 
 Run a small CLI to see the design work with fictional records. Normal access is limited to **500 records/request** and **2,000 over a rolling 24-hour window**. Larger access requires independent approval. Full or high-impact access requires a separate escalation chain: Escalation Multisig Gate.

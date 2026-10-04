@@ -1,6 +1,7 @@
 # Sensitive Data Egress Gate — 最小の参照実装
 
-**Current: 1 credential → ALL**  
+**Current: 1 credential → ALL**
+
 **Target: 1 credential → bounded**
 
 認証情報が1つ悪用されても、取得できる量を条件で区切る。その設計思想を、架空データで数秒以内に確認できるCLIです。
