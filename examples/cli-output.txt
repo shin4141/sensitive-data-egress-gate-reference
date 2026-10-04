@@ -1,0 +1,18 @@
+Current: 1 credential -> ALL (12,000 fictional records)
+Target:  1 credential -> bounded (500/request; 2,000/rolling 24h)
+Fixed sample only. WAIT uses a simulated clock; no data is sent.
+
+Normal / 500                    PASS | released=500
+Normal / 501                    BLOCK
+Rolling 24h / 2,000             PASS | cumulative=2,000
+Rolling 24h / 2,001             INDEPENDENT_APPROVAL_REQUIRED
+Large / no independent Seat     INDEPENDENT_APPROVAL_REQUIRED
+Large / independent Seat        PASS | released=501
+New destination                 APPROVAL_INVALIDATED
+New destination / release       BLOCK
+ALL / normal path               BLOCK
+ALL / Owner alone               BLOCK
+ALL / before WAIT completes     BLOCK
+
+Request -> Notify -> WAIT -> Independent Seat -> Owner Seat -> Release
+ALL / complete chain            PASS | released=12,000
