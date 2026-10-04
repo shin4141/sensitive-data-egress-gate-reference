@@ -6,6 +6,8 @@
 
 **This repository is a reference implementation, not a production security product.**
 
+Commercial design and sample deliverable: [Sensitive Data Egress Gate](https://shin4141.github.io/sensitive-data-egress-gate/?lang=en).
+
 Run a small CLI to see the design work with fictional records. Normal access is limited to **500 records/request** and **2,000 over a rolling 24-hour window**. Larger access requires independent approval. Full or high-impact access requires a separate escalation chain: Escalation Multisig Gate.
 
 [日本語](README.md)

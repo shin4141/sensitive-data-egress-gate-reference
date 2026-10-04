@@ -6,6 +6,8 @@
 
 **This repository is a reference implementation, not a production security product.**
 
+商用Design・成果物サンプルはこちら：[Sensitive Data Egress Gate](https://shin4141.github.io/sensitive-data-egress-gate/)
+
 認証情報が1つ悪用されても、取得できる量を条件で区切る。その設計思想を、架空データで数秒以内に確認できるCLIです。
 通常は **500件/回・直近24時間で2,000件**。大量取得には別の承認者を要求し、全量・高影響の取得は、通知・待機・独立承認・最終責任者の承認がそろった専用経路（Escalation Multisig Gate）へ進みます。
 
