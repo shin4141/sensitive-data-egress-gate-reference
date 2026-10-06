@@ -8,6 +8,16 @@
 
 Commercial design and sample deliverable: [Sensitive Data Egress Gate](https://shin4141.github.io/sensitive-data-egress-gate/?lang=en).
 
+## What this project is for
+
+This repository is a minimal model for **personal data security design**, **maximum data extraction after credential compromise**, **one-credential blast radius**, **AI agent / automation data egress**, and **stop / approval / recovery boundaries** around systems that can access customer or sensitive data.
+
+The core question is:
+
+> If one credential or normal permission is abused, how much sensitive data can leave, where does release stop, whose approval is required, and how does the system return to normal operation?
+
+It is not a replacement for intrusion prevention. It models how to keep the **reachable loss bounded** even when a credential is compromised, misused, or exercised by faulty automation.
+
 Run a small CLI to see the design work with fictional records. Normal access is limited to **500 records/request** and **2,000 over a rolling 24-hour window**. Larger access requires independent approval. Full or high-impact access requires a separate escalation chain: Escalation Multisig Gate.
 
 [日本語](README.md)
