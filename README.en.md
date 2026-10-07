@@ -78,6 +78,12 @@ Caller IDs and roles are trusted model inputs. Real authentication, cryptographi
 An attacker who can freely modify the process's code or memory is outside the model. State and audit events disappear on restart. Allocation is serialized within one process; this is not a production or distributed-system guarantee.
 Data consists only of generated `FICTIONAL/...` identifiers, with no real company or personal data.
 
+## Trust boundary
+
+This reference does not require real customer data, production credentials, or broad internal access.
+The commercial Design phase is also scoped around the minimum evidence needed to define the boundary, with the aim of reducing unnecessary legal, privacy, and operational risk for both sides.
+[Public OSS repair history](https://github.com/shin4141/shin4141/blob/main/MERGE_PORTFOLIO.md) provides a way to evaluate the reviewer before exposing sensitive systems.
+
 ## Show the code; retain the design judgment as the service
 
 This repository enforces fixed fictional conditions. It does not include real-company threshold selection, customer-specific Seat design decisions, the procedure for deciding which controls to remove, or commercial exception design.
